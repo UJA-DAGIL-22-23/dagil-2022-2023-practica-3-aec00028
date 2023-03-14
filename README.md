@@ -1,4 +1,9 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10405454&assignment_repo_type=AssignmentRepo)
+
+## Nombre: Álvaro Expósito Carrillo
+## Correo: aec00028@red.ujaen.es
+* Enlace tablero Trello: https://trello.com/invite/b/7tV6rUt5/ATTIef598def3397a48e2a4df2d0571624b0C6D41B62/p3-desarrollo-agil
+
 # *Plantilla Práctica Microservicios*: descripción de la aplicación
 
 Este código que se presenta aquí corresponde a la plantilla para realizar un desarrollo basado en microservicios para las prácticas de Desarrollo Ágil, para el curso 2022-2023.
