@@ -3,6 +3,295 @@
 ## Nombre: Álvaro Expósito Carrillo
 ## Correo: aec00028@red.ujaen.es
 * Enlace tablero Trello: https://trello.com/invite/b/7tV6rUt5/ATTIef598def3397a48e2a4df2d0571624b0C6D41B62/p3-desarrollo-agil
+## Documentos de cada Jugador de la colección Rugby en mi base de datos de Fauna en formato JSON
+
+
+ ```{
+  "ref": Ref(Collection("Rugby"), "359178857554641497"),
+  "ts": 1678878548540000,
+  "data": {
+    "nombre": "Eva",
+    "apellidos": "Temes Moya",
+    "fecha": {
+      "day": 22,
+      "month": 4,
+      "year": 1999
+    },
+    "equipo": "GranadinosRC",
+    "historialEquipos": [
+      "JienensesRC",
+      "CordobesesRC"
+    ],
+    "peso": "60",
+    "altura": "160",
+    "posicion": "hooker",
+    "zona": "forward",
+    "numTrakles": "13"
+  }
+}
+
+```
+
+ ```{
+  "ref": Ref(Collection("Rugby"), "359205098265510490"),
+  "ts": 1678878586475000,
+  "data": {
+    "nombre": "Alvaro",
+    "apellidos": "Expósito Carrillo",
+    "fecha": {
+      "day": 12,
+      "month": 7,
+      "year": 2001
+    },
+    "equipo": "JienensesRC",
+    "historialEquipos": [
+      "JienensesRC",
+      "CordobesesRC"
+    ],
+    "peso": "83",
+    "altura": "195",
+    "posicion": "zaguero",
+    "zona": "back",
+    "numTrakles": "11"
+  }
+}
+
+```
+
+ ```{
+  "ref": Ref(Collection("Rugby"), "359205945757139546"),
+  "ts": 1678880643856000,
+  "data": {
+    "nombre": "William",
+    "apellidos": "Guerra Robledo",
+    "fecha": {
+      "day": 2,
+      "month": 6,
+      "year": 2001
+    },
+    "equipo": "GiantsRC",
+    "historialEquipos": [
+      "JienensesRC",
+      "GranadinosRC"
+    ],
+    "peso": "80",
+    "altura": "175",
+    "posicion": "apertura",
+    "zona": "back",
+    "numTrakles": "16"
+  }
+}
+
+```
+
+ ```{
+  "ref": Ref(Collection("Rugby"), "359206234616758873"),
+  "ts": 1678880681713000,
+  "data": {
+    "nombre": "Sofia",
+    "apellidos": "Atienza Rebollar",
+    "fecha": {
+      "day": 12,
+      "month": 1,
+      "year": 2000
+    },
+    "equipo": "PalenciaRC",
+    "historialEquipos": [
+      "JienensesRC",
+      "ChulasRugby"
+    ],
+    "peso": "67",
+    "altura": "170",
+    "posicion": "flanker",
+    "zona": "forward",
+    "numTrakles": "33"
+  }
+}
+
+```
+
+ ```{
+  "ref": Ref(Collection("Rugby"), "359206416789013081"),
+  "ts": 1678880712840000,
+  "data": {
+    "nombre": "Alejandro",
+    "apellidos": "Bedoya Palop",
+    "fecha": {
+      "day": 22,
+      "month": 12,
+      "year": 2001
+    },
+    "equipo": "GiantsRC",
+    "historialEquipos": [
+      "JienensesRC",
+      "MacrosRC"
+    ],
+    "peso": "97",
+    "altura": "192",
+    "posicion": "pilar",
+    "zona": "forward",
+    "numTrakles": "123"
+  }
+}
+
+```
+
+ ```{
+  "ref": Ref(Collection("Rugby"), "359206479019901529"),
+  "ts": 1678880730850000,
+  "data": {
+    "nombre": "Leire",
+    "apellidos": "Bastida Goinkotxea",
+    "fecha": {
+      "day": 1,
+      "month": 11,
+      "year": 2001
+    },
+    "equipo": "ChulasRugby",
+    "historialEquipos": [
+      "JienensesRC",
+      "ChulasRugby"
+    ],
+    "peso": "67",
+    "altura": "177",
+    "posicion": "flanker",
+    "zona": "forward",
+    "numTrakles": "23"
+  }
+}
+
+```
+
+ ```{
+  "ref": Ref(Collection("Rugby"), "359206608473948761"),
+  "ts": 1678880751417000,
+  "data": {
+    "nombre": "Paloma",
+    "apellidos": "Blanco Yudego",
+    "fecha": {
+      "day": 27,
+      "month": 5,
+      "year": 2001
+    },
+    "equipo": "XauenRugby",
+    "historialEquipos": [
+      "GiantsRC",
+      "ChulasRugby"
+    ],
+    "peso": "63",
+    "altura": "155",
+    "posicion": "ala",
+    "zona": "back",
+    "numTrakles": "3"
+  }
+}
+
+```
+
+ ```{
+  "ref": Ref(Collection("Rugby"), "359206753728987737"),
+  "ts": 1678880775260000,
+  "data": {
+    "nombre": "Ignacio",
+    "apellidos": "Cervilla García",
+    "fecha": {
+      "day": 8,
+      "month": 10,
+      "year": 1999
+    },
+    "equipo": "GranadinosRC",
+    "historialEquipos": [
+      "GiantsRC",
+      "ChulasRugby",
+      "DuroRugbyClub"
+    ],
+    "peso": "73",
+    "altura": "195",
+    "posicion": "centro",
+    "zona": "back",
+    "numTrakles": "63"
+  }
+}
+
+```
+
+ ```{
+  "ref": Ref(Collection("Rugby"), "359206830241481306"),
+  "ts": 1678880803350000,
+  "data": {
+    "nombre": "Luis",
+    "apellidos": "Ortega Rubio",
+    "fecha": {
+      "day": 12,
+      "month": 3,
+      "year": 2001
+    },
+    "equipo": "JienensesRC",
+    "historialEquipos": [
+      "JienensesRC",
+      "CordobesesRC"
+    ],
+    "peso": "81",
+    "altura": "195",
+    "posicion": "zaguero",
+    "zona": "back",
+    "numTrakles": "121"
+  }
+}
+
+```
+
+ ```{
+  "ref": Ref(Collection("Rugby"), "359206902429647450"),
+  "ts": 1678880826660000,
+  "data": {
+    "nombre": "Rocio",
+    "apellidos": "Parras García",
+    "fecha": {
+      "day": 7,
+      "month": 4,
+      "year": 2000
+    },
+    "equipo": "ChulasRugby",
+    "historialEquipos": [
+      "JienensesRC",
+      "CordobesesRC"
+    ],
+    "peso": "60",
+    "altura": "160",
+    "posicion": "hooker",
+    "zona": "forward",
+    "numTrakles": "13"
+  }
+}
+
+```
+
+ ```{
+  "ref": Ref(Collection("Rugby"), "359207141908677210"),
+  "ts": 1678880844806000,
+  "data": {
+    "nombre": "Julia",
+    "apellidos": "Martinez Quesada",
+    "fecha": {
+      "day": 22,
+      "month": 7,
+      "year": 2001
+    },
+    "equipo": "GiantsRC",
+    "historialEquipos": [
+      "JienensesRC",
+      "CordobesesRC"
+    ],
+    "peso": "67",
+    "altura": "168",
+    "posicion": "flanker",
+    "zona": "forward",
+    "numTrakles": "143"
+  }
+}
+
+```
 
 # *Plantilla Práctica Microservicios*: descripción de la aplicación
 
