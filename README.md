@@ -7,6 +7,12 @@
 ### Captura de pantalla de mi Home en Fauna
 <img src='/Home-Fauna.png' width='750px'>
 
+### Captura de pantalla de la Base de Datos de Fauna
+<img src='/BaseDatos-Fauna.png' width='750px'>
+
+### Captura de pantalla de la colección de Fauna con todos sus documentos
+<img src='/Coleccion-Fauna.png' width='750px'>
+
 ## Documentos de cada Jugador de la colección Rugby en mi base de datos de Fauna en formato JSON
 
 
