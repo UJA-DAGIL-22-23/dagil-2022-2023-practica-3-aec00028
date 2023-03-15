@@ -3,6 +3,10 @@
 ## Nombre: Álvaro Expósito Carrillo
 ## Correo: aec00028@red.ujaen.es
 * Enlace tablero Trello: https://trello.com/invite/b/7tV6rUt5/ATTIef598def3397a48e2a4df2d0571624b0C6D41B62/p3-desarrollo-agil
+
+### Captura de pantalla de mi Home en Fauna
+<img src='/Home-Fauna.png' width='750px'>
+
 ## Documentos de cada Jugador de la colección Rugby en mi base de datos de Fauna en formato JSON
 
 
