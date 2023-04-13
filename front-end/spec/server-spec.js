@@ -39,5 +39,19 @@ describe('Servidor FRONT-END:', () => {
           })
           .end((error) => { error ? done.fail(error) : done() })
       });
+
+      it('Devuelve Personas Acerca De', (done) => {
+        supertest(app)
+            .get('/acercade')
+            .expect(200)
+            .expect('Content-Type', /json/)
+            .expect(function (res) {
+                //console.log( "BODY ACERCA DE ", res.body ); // Para comprobar qué contiene exactamente res.body
+                assert(res.body.hasOwnProperty('mensaje'));
+                assert(res.body.mensaje === "Microservicio Personas: acerca de");
+
+            })
+            .end((error) => { error ? done.fail(error) : done() })
+    });
   })
 })
