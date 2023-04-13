@@ -41,6 +41,7 @@ Plantilla.plantillaTags = {
 // Cabecera de la tabla
 Plantilla.plantillaTablaPersonas.cabecera = `<table width="100%" class="listado-personas">
                     <thead>
+                        <th width="20%">ID</th>
                         <th width="20%">Nombre</th>
                         <th width="20%">Apellidos</th>
                         <th width="20%">Fecha Nacimiento</th>
@@ -123,10 +124,9 @@ Plantilla.mostrarAcercaDe = function (datosDescargados) {
     const mensajeAMostrar = `<div>
     <p>${datosDescargados.mensaje}</p>
     <ul>
-    <li><b>Autor/a</b>: ${datosDescargados.mensaje}</li>
-    <li><b>E-mail</b>: ${datosDescargados.autor}</li>
+    <li><b>Autor/a</b>: ${datosDescargados.autor}</li>
     <li><b>E-mail</b>: ${datosDescargados.email}</li>
-    <li><b>E-mail</b>: ${datosDescargados.fecha}</li>
+    <li><b>Fecha</b>: ${datosDescargados.fecha}</li>
     </ul>
     </div>
     `;
@@ -225,7 +225,7 @@ Plantilla.recupera = async function (callBackFn) {
 
     // Intento conectar con el microservicio personas
     try {
-        const url = Frontend.API_GATEWAY + "/Quidditch/getTodas"
+        const url = Frontend.API_GATEWAY + "/Rugby/getTodas"
         response = await fetch(url)
 
     } catch (error) {
@@ -259,15 +259,16 @@ Plantilla.plantillaTablaPersonas.cuerpo = `
         <td>${Plantilla.plantillaTags.ID}</td>
         <td>${Plantilla.plantillaTags.NOMBRE}</td>
         <td>${Plantilla.plantillaTags.APELLIDOS}</td>
-        <td>${Plantilla.plantillaTags.NUMTRAKLES}</td>
-        <td>${Plantilla.plantillaTags.POSICION}</td>
         <td>${Plantilla.plantillaTags.FECHA}</td>
         <td>${Plantilla.plantillaTags.EQUIPO}</td>
+        <td>${Plantilla.plantillaTags.PESO}</td>
         <td>${Plantilla.plantillaTags.ALTURA}</td>
-        <td>${Plantilla.plantillaTags.ZONA}</td>
+        <td>${Plantilla.plantillaTags.POSICION}</td>
+        <td>${Plantilla.plantillaTags.NUMTRAKLES}</td>
         <td>${Plantilla.plantillaTags.HISTORIAL}</td>
+        <td>${Plantilla.plantillaTags.ZONA}</td>
         <td>
-                    <div><a href="javascript:Personas.mostrar('${Plantilla.plantillaTags.ID}')" class="opcion-secundaria mostrar">Mostrar</a></div>
+                    <div><a href="javascript:Plantilla.mostrar('${Plantilla.plantillaTags.ID}')" class="opcion-secundaria mostrar">Mostrar</a></div>
         </td>
     </tr>
     `;
@@ -283,3 +284,51 @@ Plantilla.plantillaTablaPersonas.cuerpo2 = `
         </td>
         </tr>
     `;
+
+    Plantilla.mostrar = function (idPersona) {
+        this.recuperaUnaPersona(idPersona, this.imprimeUnaPersona);
+    }
+    /**
+     * Función que recuperar todas las personas llamando al MS Personas.
+     * Posteriormente, llama a la función callBackFn para trabajar con los datos recuperados.
+     * @param {String} idPersona Identificador de la persona a mostrar
+     * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
+     */
+    Plantilla.recuperaUnaPersona = async function (idPersona, callBackFn) {
+        try {
+            const url = Frontend.API_GATEWAY + "/personas/getPorId/" + idPersona
+            const response = await fetch(url);
+            if (response) {
+                const persona = await response.json()
+                callBackFn(persona)
+            }
+        } catch (error) {
+            alert("Error: No se han podido acceder al API Gateway")
+            console.error(error)
+        }
+    }
+    
+    /**
+     * Función para mostrar en pantalla los detalles de una persona que se ha recuperado de la BBDD por su id
+     * @param {Persona} persona Datos de la persona a mostrar
+     */
+    
+    Plantilla.imprimeUnaPersona = function (persona) {
+        // console.log(persona) // Para comprobar lo que hay en vector
+        let msj = Plantilla.personaComoFormulario(persona);
+    
+        // Borro toda la info de Article y la sustituyo por la que me interesa
+        Frontend.Article.actualizar("Mostrar una persona", msj)
+    
+        // Actualiza el objeto que guarda los datos mostrados
+        Plantilla.almacenaDatos(persona)
+    }
+    
+    /**
+     * Almacena los datos de la persona que se está mostrando
+     * @param {Persona} persona Datos de la persona a almacenar
+     */
+    
+    Plantilla.almacenaDatos = function (persona) {
+        Plantilla.personaMostrada = persona;
+    }
