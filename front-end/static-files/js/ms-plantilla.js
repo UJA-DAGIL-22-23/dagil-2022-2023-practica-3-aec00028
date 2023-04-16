@@ -28,7 +28,7 @@ Plantilla.plantillaTags = {
     "APELLIDOS": "### APELLIDOS ###",
     "FECHA": "### FECHA ###",
     "EQUIPO": "### EQUIPO ###",
-    "PESO": "### PESP ###",
+    "PESO": "### PESO ###",
     "ALTURA": "### ALTURA ###",
     "POSICION": "### POSICION ###",
     "NUMTRAKLES": "### NUMTRAKLES ###",
@@ -36,6 +36,10 @@ Plantilla.plantillaTags = {
     "ZONA": "### ZONA ###"
 
     
+}
+
+Plantilla.crear = function ( num ) {
+    return (num<10?"0":"")+num
 }
 
 // Cabecera de la tabla
@@ -189,6 +193,41 @@ Plantilla.plantillaTablaPersonas.actualiza2 = function (persona) {
     return Plantilla.sustituyeTags2(this.cuerpo2, persona)
 }
 
+//Funcion para ordenar Alfabeticamente los campos de la BBDD usando con la funcion Sort
+Plantilla.listaAlfabeticamente = function(vector,campo){
+    vector.sort(function(a,b)
+     {
+         let campoA = null; 
+         let campoB = null;  
+         if(campo == 'fecha'){
+             campoA = a.data[campo].year + "" +  Plantilla.crear(a.data[campo].month) + ""+ Plantilla.crear(a.data[campo].day)
+             campoB = b.data[campo].year + "" +   Plantilla.crear(b.data[campo].month) + ""+ Plantilla.crear(b.data[campo].day)
+         }else{
+             campoA = a.data[campo].toUpperCase();
+             campoB = b.data[campo].toUpperCase();
+         }
+             if (campoA < campoB) {
+                 return -1;
+             }
+             if (campoA > campoB) {
+                 return 1;
+             }
+             return 0;
+     });
+  
+ 
+         // Compongo el contenido que se va a mostrar dentro de la tabla
+         let msj = Plantilla.plantillaTablaPersonas.cabecera
+     if (vector && Array.isArray(vector)) {
+         vector.forEach(e => msj += Plantilla.plantillaTablaPersonas.actualiza(e))
+     }
+         msj += Plantilla.plantillaTablaPersonas.pie
+         // Para comprobar lo que hay en vector
+         // Borro toda la info de Article y la sustituyo por la que me interesa
+         Frontend.Article.actualizar("Listado de personas solo con su nombre", msj)
+ 
+ }
+
 /**
  * Actualiza el cuerpo de la plantilla deseada con los datos de la persona que se le pasa
  * @param {String} Plantilla Cadena conteniendo HTML en la que se desea cambiar lso campos de la plantilla por datos
@@ -201,7 +240,7 @@ Plantilla.sustituyeTags = function (plantilla, persona) {
         .replace(new RegExp(Plantilla.plantillaTags.NOMBRE, 'g'), persona.data.nombre)
         .replace(new RegExp(Plantilla.plantillaTags.APELLIDOS, 'g'), persona.data.apellidos)
         .replace(new RegExp(Plantilla.plantillaTags.POSICION, 'g'), persona.data.posicion)
-        .replace(new RegExp(Plantilla.plantillaTags.FECHA, 'g'), persona.data.fecha)
+        .replace(new RegExp(Plantilla.plantillaTags.FECHA, 'g'), persona.data.fecha.day + "-" + persona.data.fecha.month + "-" + persona.data.fecha.year)
         .replace(new RegExp(Plantilla.plantillaTags.EQUIPO, 'g'), persona.data.equipo)
         .replace(new RegExp(Plantilla.plantillaTags.PESO, 'g'), persona.data.peso)
         .replace(new RegExp(Plantilla.plantillaTags.ALTURA, 'g'), persona.data.altura)
@@ -220,7 +259,7 @@ Plantilla.sustituyeTags2 = function (plantilla, persona) {
  * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
 
-Plantilla.recupera = async function (callBackFn) {
+Plantilla.recupera = async function (callBackFn,campo) {
     let response = null
 
     // Intento conectar con el microservicio personas
@@ -231,14 +270,14 @@ Plantilla.recupera = async function (callBackFn) {
     } catch (error) {
         alert("Error: No se han podido acceder al API Gateway")
         console.error(error)
-        //throw error
+        
     }
 
     // Muestro todas las persoans que se han descargado
     let vectorPersonas = null
     if (response) {
         vectorPersonas = await response.json()
-        callBackFn(vectorPersonas.data)
+        callBackFn(vectorPersonas.data,campo)
     }
 }
 
@@ -253,6 +292,11 @@ Plantilla.listar2 = function () {
     Plantilla.recupera(Plantilla.imprimeMuchasPersonas2);
 }
 
+Plantilla.listar3 = function (campo) {
+    Plantilla.recupera(Plantilla.listaAlfabeticamente,campo);
+}
+
+Plantilla.l
 // Elemento TR que muestra los datos de una persona
 Plantilla.plantillaTablaPersonas.cuerpo = `
     <tr title="${Plantilla.plantillaTags.ID}">
@@ -280,7 +324,7 @@ Plantilla.plantillaTablaPersonas.cuerpo2 = `
         <td>${Plantilla.plantillaTags.NOMBRE}</td>
       
         <td>
-                    <div><a href="javascript:Personas.mostrar('${Plantilla.plantillaTags.ID}')" class="opcion-secundaria mostrar">Mostrar</a></div>
+            <div><a href="javascript:Personas.mostrar('${Plantilla.plantillaTags.ID}')" class="opcion-secundaria mostrar">Mostrar</a></div>
         </td>
         </tr>
     `;
@@ -296,7 +340,7 @@ Plantilla.plantillaTablaPersonas.cuerpo2 = `
      */
     Plantilla.recuperaUnaPersona = async function (idPersona, callBackFn) {
         try {
-            const url = Frontend.API_GATEWAY + "/personas/getPorId/" + idPersona
+            const url = Frontend.API_GATEWAY + "/Rugby/getPorId/" + idPersona
             const response = await fetch(url);
             if (response) {
                 const persona = await response.json()
