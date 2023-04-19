@@ -11,8 +11,8 @@
 }
 
 .dropbtn {
-    background-color: rgba(130, 122, 122, 0.5);
-    color: rgba(8, 0, 0, 0.5);
+    background-color: rgba(194, 182, 182, 0.5);
+    color: black;
     padding: 12px;
     font-size: 16px;
     border: outset;
@@ -43,3 +43,7 @@
     display: block;
 }
 
+.styled-table tbody tr { border-bottom: 1px solid #dddddd; } 
+.styled-table tbody tr:nth-of-type(even) { background-color: #f3f3f3; } 
+.styled-table tbody tr:last-of-type { border-bottom: 2px solid #009879; }
+.styled-table thead tr { background-color: #ef210e; color: #ffffff; text-align: middle; }

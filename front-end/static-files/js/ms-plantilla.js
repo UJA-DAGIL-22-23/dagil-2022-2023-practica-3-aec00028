@@ -43,7 +43,7 @@ Plantilla.crear = function ( num ) {
 }
 
 // Cabecera de la tabla
-Plantilla.plantillaTablaPersonas.cabecera = `<table width="100%" class="listado-personas">
+Plantilla.plantillaTablaPersonas.cabecera = `<table width="100%" class="styled-table">
                     <thead>
                         <th width="20%">ID</th>
                         <th width="20%">Nombre</th>
