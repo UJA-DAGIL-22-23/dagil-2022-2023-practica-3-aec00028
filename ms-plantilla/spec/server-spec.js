@@ -42,7 +42,9 @@ describe('Servidor PLANTILLA:', () => {
           //console.log( "BODY ACERCA DE ", res.body ); // Para comprobar qué contiene exactamente res.body
           assert(res.body.hasOwnProperty('mensaje'));
           assert(res.body.mensaje === "Microservicio MS Plantilla: acerca de");
-
+          assert(res.body.autor === "Álvaro Expósito Carrillo");
+          assert(res.body.email === "aec00028@red.ujaen.es");
+          assert(res.body.fecha === "28/03/2023");
         })
         .end((error) => { error ? done.fail(error) : done() })
     });
@@ -79,12 +81,10 @@ describe('Servidor PLANTILLA:', () => {
         .expect('Content-Type', /json/)
         .expect(function (res) {
             // console.log( res.body ); // Para comprobar qué contiene exactamente res.body
-            assert(res.body.data.length === 3);
+            assert(res.body.data.length === 11); //cambio a el numero de jugadores que tiene mi bbdd
         })
         .end((error) => { error ? done.fail(error) : done(); }
         );
 });
 
 });
-
-
