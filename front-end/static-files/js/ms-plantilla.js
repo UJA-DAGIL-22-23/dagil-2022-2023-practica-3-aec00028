@@ -162,7 +162,9 @@ Plantilla.imprimeMuchasPersonas = function (vector) {
 
     // Compongo el contenido que se va a mostrar dentro de la tabla
     let msj = Plantilla.plantillaTablaPersonas.cabecera
-    vector.forEach(e => msj += Plantilla.plantillaTablaPersonas.actualiza(e))
+    if (vector && Array.isArray(vector)) {
+        vector.forEach(e => msj += Plantilla.plantillaTablaPersonas.actualiza(e))
+    }
     msj += Plantilla.plantillaTablaPersonas.pie
 
     // Borro toda la info de Article y la sustituyo por la que me interesa
@@ -174,11 +176,13 @@ Plantilla.imprimeMuchasPersonas2 = function (vector) {
 
     // Compongo el contenido que se va a mostrar dentro de la tabla
     let msj = Plantilla.plantillaTablaPersonas.cabecera2
+    if (vector && Array.isArray(vector)) {
     vector.forEach(e => msj += Plantilla.plantillaTablaPersonas.actualiza2(e))
+    }
     msj += Plantilla.plantillaTablaPersonas.pie
 
     // Borro toda la info de Article y la sustituyo por la que me interesa
-    Frontend.Article.actualizar("Listado del nombre de los jugadores", msj)
+    Frontend.Article.actualizar("Listado de personas solo con su nombre", msj)
 }
 /**
  * Actualiza el cuerpo de la tabla con los datos de la persona que se le pasa
@@ -296,6 +300,11 @@ Plantilla.listar3 = function (campo) {
     Plantilla.recupera(Plantilla.listaAlfabeticamente,campo);
 }
 
+Plantilla.personaComoFormulario = function (persona) {
+    return Plantilla.plantillaFormularioPersona.actualiza( persona );
+}
+Plantilla.plantillaFormularioPersona = {}
+
 Plantilla.l
 // Elemento TR que muestra los datos de una persona
 Plantilla.plantillaTablaPersonas.cuerpo = `
@@ -323,8 +332,8 @@ Plantilla.plantillaTablaPersonas.cuerpo2 = `
       
         <td>${Plantilla.plantillaTags.NOMBRE}</td>
       
-        <td>
-            <div><a href="javascript:Personas.mostrar('${Plantilla.plantillaTags.ID}')" class="opcion-secundaria mostrar">Mostrar</a></div>
+       <td>
+            <div><a href="javascript:Personas.mostrar('${Plantilla.plantillaTags.ID}')" class="opcion-secundaria mostrar"></a></div>
         </td>
         </tr>
     `;

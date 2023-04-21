@@ -12,6 +12,12 @@ const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TIT
 const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
 const TITULO_HOME = "Plantilla Home"
 const TITULO_ACERCA_DE = "Plantilla Acerca de"
+const LISTADO_IMPRIMIR_MUCHAS_PERSONAS = "Listado de personas con todos los datos "
+const LISTADO_IMPRIMIR_MUCHAS_PERSONAS_ALFABETICAMENTE="Listado de personas ordenadas alfabeticamente solo con su nombre"
+const LISTADO_NOMBRE_MUCHAS_PERSONAS ="Listado de personas solo con su nombre"
+const LISTADO_UNA_PERSONA="Mostrar una persona"
+const CREAR = "CREAR"
+
 
 const datosDescargadosPrueba = {
     mensaje: "Mensaje de prueba descargado",
@@ -30,7 +36,24 @@ function esperar(ms) {
     }
 }
 
-
+const datosDescargadosPruebaPersona = {
+    id: 2,
+    nombre: "Alvaro",
+    apellidos: "Expósito Carrillo",
+    fecha: {
+        day: 12,
+        month: 7,
+        year: 20001
+    },
+    equipo: "JienensesRC",
+    historialEquipos: ["JienensesRC",
+    "CordobesesRC"],
+    peso: "83",
+    altura: "195",
+    posicion: "zaguero",
+    zona: "back",
+    numTrakles: "11"
+}
 
 // SPECS a probar
 
@@ -105,11 +128,11 @@ describe("Plantilla.mostrarAcercaDe: ", function () {
             // Objeto sin campo email
             Plantilla.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", fecha: "una fecha" })
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeFalse()
             // Objeto sin campo fecha
             Plantilla.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", email: "un email" })
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeFalse()
         })
     it("muestra correctamente el título y el mensaje conteniendo el autor, el email y la fecha",
         function () {
@@ -123,7 +146,21 @@ describe("Plantilla.mostrarAcercaDe: ", function () {
         })
 })
 
+describe("Plantilla.imprimeMuchasPersonas2: ", function (){
+    it("muestra datos nulos cuando le pasamos un valor nulo",
+        function () {
+            Plantilla.imprimeMuchasPersonas2([])
+            expect(elementoTitulo.innerHTML).toBe(LISTADO_NOMBRE_MUCHAS_PERSONAS)
 
+        })
+    it("muestra datos nulos cuando le pasamos un valor no nulo ",
+        function () {
+            Plantilla.imprimeMuchasPersonas2(15)
+            expect(elementoTitulo.innerHTML).toBe(LISTADO_NOMBRE_MUCHAS_PERSONAS)
+
+        })
+
+})
 /*
 IMPORTANTE
 ==========
