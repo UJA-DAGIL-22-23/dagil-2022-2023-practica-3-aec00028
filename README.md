@@ -22,8 +22,24 @@ HU02: Ver un listado solo con los nombres de todos los jugadores/equipos.
 ## Evidencia de que la HU01 funciona correctamente
 <img src='/HU 1 funcionando.png' width='750px'>
 
-## Evidencia de que la HU02 funciona correctamente
-<img src='/HU 02 listar nombres de jugadores funcionando.png' width='750px'>
+
+### Incremento 2 (HU 04)
+
+HU04: Ver un listado con todos los datos de todos los jugadores/equipos
+
+#### Captura de pantalla de TRELLO backlog antes del incremento
+<img src='/HU 04 backlog.png' width='750px'>
+
+#### Captura de pantalla de TRELLO in progress durante el incremento
+<img src='/HU 04 in progress.png' width='750px'>
+
+#### Captura de pantalla de TRELLO done después del incremento
+<img src='/HU 04 done.png' width='750px'>
+
+## Evidencia de que la HU04 funciona correctamente
+<img src='/HU 04 listar datos jugadores funcionando.png' width='750px'>
+
+
 
 ### Captura de pantalla de mi Home en Fauna
 <img src='/Home-Fauna.png' width='750px'>
