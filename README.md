@@ -5,6 +5,26 @@
 ## Correo: aec00028@red.ujaen.es
 * Enlace tablero Trello: https://trello.com/invite/b/7tV6rUt5/ATTIef598def3397a48e2a4df2d0571624b0C6D41B62/p3-desarrollo-agil
 
+### Incremento 1 (HU 01,02)
+HU01 : Ver la información del autor/autora de la aplicación al pulsar en el botón “Acerca de”
+
+HU02: Ver un listado solo con los nombres de todos los jugadores/equipos.
+
+#### Captura de pantalla de TRELLO backlog antes del incremento
+<img src='/HU 01,02 backlog.png' width='750px'>
+
+#### Captura de pantalla de TRELLO in progress durante el incremento
+<img src='/HU 01,02 in progress.png' width='750px'>
+
+#### Captura de pantalla de TRELLO done después del incremento
+<img src='/HU 01,02 done.png' width='750px'>
+
+## Evidencia de que la HU01 funciona correctamente
+<img src='/HU 1 funcionando.png' width='750px'>
+
+## Evidencia de que la HU02 funciona correctamente
+<img src='/HU 02 listar nombres de jugadores funcionando.png' width='750px'>
+
 ### Captura de pantalla de mi Home en Fauna
 <img src='/Home-Fauna.png' width='750px'>
 
