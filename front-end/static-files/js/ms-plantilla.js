@@ -388,9 +388,12 @@ Plantilla.plantillaTablaPersonas.cuerpo2 = `
         </td>
         </tr>
     `;
+    Plantilla.personaMostrada = null
+    
+    
 
-    Plantilla.mostrar = function (idPersona) {
-        this.recuperaUnaPersona(idPersona, this.imprimeUnaPersona);
+    Plantilla.mostrar = function (nombre) {
+        this.recuperaUnaPersona(nombre, this.imprimeUnaPersona);
     }
     /**
      * Función que recuperar todas las personas llamando al MS Personas.
@@ -398,9 +401,9 @@ Plantilla.plantillaTablaPersonas.cuerpo2 = `
      * @param {String} idPersona Identificador de la persona a mostrar
      * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
      */
-    Plantilla.recuperaUnaPersona = async function (idPersona, callBackFn) {
+    Plantilla.recuperaUnaPersona = async function (nombre, callBackFn) {
         try {
-            const url = Frontend.API_GATEWAY + "/Rugby/getPorId/" + idPersona
+            const url = Frontend.API_GATEWAY + "/Rugby/listarUna/" + nombre
             const response = await fetch(url);
             if (response) {
                 const persona = await response.json()

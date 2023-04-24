@@ -162,7 +162,30 @@ describe("Plantilla.imprimeMuchasPersonas2: ", function (){
 
 })
 
+describe("Plantilla.crear: ", function (){
+    it("muestra datos nulos cuando le pasamos un valor nulo",
+        function () {
+            Plantilla.crear()
+            expect(Plantilla.crear(7)).toBe("07");
 
+        })
+
+})
+
+describe("Plantilla.listaAlfabeticamente: ", function (){
+    it("muestra datos nulos cuando le pasamos un valor nulo",
+        function () {
+            Plantilla.listaAlfabeticamente([])
+            expect(elementoTitulo.innerHTML).toBe(LISTADO_IMPRIMIR_MUCHAS_PERSONAS_ALFABETICAMENTE)
+
+        })
+    it("muestra datos nulos cuando le pasamos un valor no nulo ",
+        function () {
+            Plantilla.listaAlfabeticamente(15)
+            expect(elementoTitulo.innerHTML).toBe(LISTADO_IMPRIMIR_MUCHAS_PERSONAS_ALFABETICAMENTE)
+
+        })
+})
 
 /*
 IMPORTANTE

@@ -124,6 +124,20 @@ const CB_OTHERS = {
         }
     },
 
+    listarUna: async (req, res) => {
+        try {
+            let persona = await client.query(
+                q.Get(q.Ref(q.Collection(COLLECTION), req.params.nombre))
+            )
+       //     console.log( persona )
+            CORS(res)
+                .status(200)
+                .json(persona)
+        } catch (error) {
+            res.status(500).json({ error: error.description })
+        }
+    },
+
 }
 
 // Une todos los callbacks en un solo objeto para poder exportarlos.

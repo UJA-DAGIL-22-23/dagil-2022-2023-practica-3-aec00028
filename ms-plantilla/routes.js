@@ -55,6 +55,32 @@ router.get("/getTodas", async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+
+    router.param("nombre", async (req, res, next, nombre) => {
+    next();
+});
+
+router.get("/listarUna/:nombre", async (req, res) =>{
+    try{
+        await callbacks.listarUna(req, res)
+    }catch (error){
+        console.log(error);
+    }
+
+});
+router.param("nombre", async (req, res, next, nombre) => {
+    next();
+});
+
+router.get("/listarUna/:nombre", async (req, res) =>{
+    try{
+        await callbacks.listarUna(req, res)
+    }catch (error){
+        console.log(error);
+    }
+
+});
+
 });
 
 // Exporto el módulo para poder usarlo en server
