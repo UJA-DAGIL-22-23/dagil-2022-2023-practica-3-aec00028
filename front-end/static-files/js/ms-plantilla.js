@@ -66,6 +66,20 @@ Plantilla.plantillaTablaPersonas.pie = `        </tbody>
              `;
 
 
+
+Plantilla.plantillaTablaPersonas.cabecera3 = `<table width="100%" class="styled-table">
+                    <thead>
+                        <th width="20%">Nombre</th>
+                    </thead>
+                    <tbody>
+    `;
+
+// Pie de la tabla
+Plantilla.plantillaTablaPersonas.pie = `        </tbody>
+             </table>
+             `;
+
+
 /**
  * Función que descarga la info MS Plantilla al llamar a una de sus rutas
  * @param {string} ruta Ruta a descargar
@@ -175,7 +189,7 @@ Plantilla.imprimeMuchasPersonas2 = function (vector) {
     // console.log(vector) // Para comprobar lo que hay en vector
 
     // Compongo el contenido que se va a mostrar dentro de la tabla
-    let msj = Plantilla.plantillaTablaPersonas.cabecera2
+    let msj = Plantilla.plantillaTablaPersonas.cabecera3
     if (vector && Array.isArray(vector)) {
     vector.forEach(e => msj += Plantilla.plantillaTablaPersonas.actualiza2(e))
     }
@@ -224,6 +238,37 @@ Plantilla.listaAlfabeticamente = function(vector,campo){
          let msj = Plantilla.plantillaTablaPersonas.cabecera
      if (vector && Array.isArray(vector)) {
          vector.forEach(e => msj += Plantilla.plantillaTablaPersonas.actualiza(e))
+     }
+         msj += Plantilla.plantillaTablaPersonas.pie
+         // Para comprobar lo que hay en vector
+         // Borro toda la info de Article y la sustituyo por la que me interesa
+         Frontend.Article.actualizar("Listado de personas solo con su nombre", msj)
+ 
+ }
+
+ Plantilla.soloNombresAlfabeticamente = function(vector,campo){
+    vector.sort(function(a,b)
+     {
+        let campoA = null; 
+        let campoB = null;  
+        
+            campoA = a.data[campo].toUpperCase();
+            campoB = b.data[campo].toUpperCase();
+        
+            if (campoA < campoB) {
+                return -1;
+            }
+            if (campoA > campoB) {
+                return 1;
+            }
+            return 0;
+     });
+  
+ 
+         // Compongo el contenido que se va a mostrar dentro de la tabla
+         let msj = Plantilla.plantillaTablaPersonas.cabecera3
+     if (vector && Array.isArray(vector)) {
+         vector.forEach(e => msj += Plantilla.plantillaTablaPersonas.actualiza2(e))
      }
          msj += Plantilla.plantillaTablaPersonas.pie
          // Para comprobar lo que hay en vector
@@ -294,6 +339,12 @@ Plantilla.listar = function () {
 
 Plantilla.listar2 = function () {
     Plantilla.recupera(Plantilla.imprimeMuchasPersonas2);
+    
+}
+
+Plantilla.listar4 = function (campo) {
+    Plantilla.recupera(Plantilla.soloNombresAlfabeticamente,campo);
+    
 }
 
 Plantilla.listar3 = function (campo) {
