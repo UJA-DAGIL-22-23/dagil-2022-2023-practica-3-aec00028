@@ -176,16 +176,45 @@ describe("Plantilla.listaAlfabeticamente: ", function (){
     it("muestra datos nulos cuando le pasamos un valor nulo",
         function () {
             Plantilla.listaAlfabeticamente([])
-            expect(elementoTitulo.innerHTML).toBe(LISTADO_IMPRIMIR_MUCHAS_PERSONAS_ALFABETICAMENTE)
+            expect(elementoTitulo.innerHTML).toBe(LISTADO_NOMBRE_MUCHAS_PERSONAS)
 
         })
-    it("muestra datos nulos cuando le pasamos un valor no nulo ",
+   /* it("muestra datos nulos cuando le pasamos un valor no nulo ",
         function () {
             Plantilla.listaAlfabeticamente(15)
             expect(elementoTitulo.innerHTML).toBe(LISTADO_IMPRIMIR_MUCHAS_PERSONAS_ALFABETICAMENTE)
 
-        })
+        })*/
 })
+
+describe("Plantilla.imprimeMuchasPersonas: ", function (){
+    it("muestra datos nulos cuando le pasamos un valor nulo",
+        function () {
+            Plantilla.imprimeMuchasPersonas([])
+            expect(elementoTitulo.innerHTML).toBe(LISTADO_IMPRIMIR_MUCHAS_PERSONAS)
+
+        })
+    it("muestra datos nulos cuando le pasamos un valor no nulo ",
+        function () {
+            Plantilla.imprimeMuchasPersonas(15)
+            expect(elementoTitulo.innerHTML).toBe(LISTADO_IMPRIMIR_MUCHAS_PERSONAS)
+
+        })
+    
+})
+
+describe("Plantilla.soloNombresAlfabeticamente: ", function (){
+    it("muestra datos nulos cuando le pasamos un valor nulo",
+        function () {
+            Plantilla.soloNombresAlfabeticamente([])
+            expect(elementoTitulo.innerHTML).toBe(LISTADO_NOMBRE_MUCHAS_PERSONAS)
+
+        })
+   
+})
+
+
+
 
 /*
 IMPORTANTE

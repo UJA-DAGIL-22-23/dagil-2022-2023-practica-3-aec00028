@@ -171,6 +171,9 @@ Plantilla.procesarAcercaDe = function () {
  * @param {Vector_de_personas} vector Vector con los datos de las personas a mostrar
  */
 
+
+
+
 Plantilla.imprimeMuchasPersonas = function (vector) {
     // console.log(vector) // Para comprobar lo que hay en vector
 
@@ -182,14 +185,15 @@ Plantilla.imprimeMuchasPersonas = function (vector) {
     msj += Plantilla.plantillaTablaPersonas.pie
 
     // Borro toda la info de Article y la sustituyo por la que me interesa
-    Frontend.Article.actualizar("Listado de personas con todos los datos", msj)
+    Frontend.Article.actualizar("Listado de personas con todos los datos ", msj)
 }
+
 
 Plantilla.imprimeMuchasPersonas2 = function (vector) {
     // console.log(vector) // Para comprobar lo que hay en vector
 
     // Compongo el contenido que se va a mostrar dentro de la tabla
-    let msj = Plantilla.plantillaTablaPersonas.cabecera3
+    let msj = Plantilla.plantillaTablaPersonas.cabecera3//solo una pers
     if (vector && Array.isArray(vector)) {
     vector.forEach(e => msj += Plantilla.plantillaTablaPersonas.actualiza2(e))
     }
