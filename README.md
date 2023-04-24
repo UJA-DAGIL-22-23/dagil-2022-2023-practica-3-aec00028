@@ -20,7 +20,10 @@ HU02: Ver un listado solo con los nombres de todos los jugadores/equipos.
 <img src='/HU 01,02 done.png' width='750px'>
 
 ## Evidencia de que la HU01 funciona correctamente
-<img src='/HU 1 funcionando.png' width='750px'>
+<img src='/HU 1 funcionando.png' width='750px'>c
+
+## Evidencia de que la HU02 funciona correctamente
+<img src='/HU02 NUEVA.png' width='550px'>
 
 
 ### Incremento 2 (HU 04)
@@ -67,7 +70,21 @@ En esta imagen se aprecia la evidencia de que la HU funciona correctamente cuand
 En esta imagen se aprecia la evidencia de que la HU funciona correctamente cuando el cliente decide ordenar por el campo fecha
 <img src='/HU 05 Ordenar por el campo que el jugador desee -fecha.png' width='750px'>
 
+### Incremento 4 (HU 03)
 
+HU04: Ver un listado con solo los nombres ordenados alfabéticamente
+
+#### Captura de pantalla de TRELLO backlog antes del incremento
+<img src='/HU 03 backlog.png' width='750px'>
+
+#### Captura de pantalla de TRELLO in progress durante el incremento
+<img src='/HU 03 in progress.png' width='750px'>
+
+#### Captura de pantalla de TRELLO done después del incremento
+<img src='/HU 03 done.png' width='750px'>
+
+## Evidencia de que la HU03 funciona correctamente
+<img src='/HU03.png' width='650px'>
 
 ### Captura de pantalla de mi Home en Fauna
 <img src='/Home-Fauna.png' width='750px'>
