@@ -5,6 +5,70 @@
 ## Correo: aec00028@red.ujaen.es
 * Enlace tablero Trello: https://trello.com/invite/b/7tV6rUt5/ATTIef598def3397a48e2a4df2d0571624b0C6D41B62/p3-desarrollo-agil
 
+### Incremento 1 (HU 01,02)
+HU01 : Ver la información del autor/autora de la aplicación al pulsar en el botón “Acerca de”
+
+HU02: Ver un listado solo con los nombres de todos los jugadores/equipos.
+
+#### Captura de pantalla de TRELLO backlog antes del incremento
+<img src='/HU 01,02 backlog.png' width='750px'>
+
+#### Captura de pantalla de TRELLO in progress durante el incremento
+<img src='/HU 01,02 in progress.png' width='750px'>
+
+#### Captura de pantalla de TRELLO done después del incremento
+<img src='/HU 01,02 done.png' width='750px'>
+
+## Evidencia de que la HU01 funciona correctamente
+<img src='/HU 1 funcionando.png' width='750px'>
+
+
+### Incremento 2 (HU 04)
+
+HU04: Ver un listado con todos los datos de todos los jugadores/equipos
+
+#### Captura de pantalla de TRELLO backlog antes del incremento
+<img src='/HU 04 backlog.png' width='750px'>
+
+#### Captura de pantalla de TRELLO in progress durante el incremento
+<img src='/HU 04 in progress.png' width='750px'>
+
+#### Captura de pantalla de TRELLO done después del incremento
+<img src='/HU 04 done.png' width='750px'>
+
+## Evidencia de que la HU04 funciona correctamente
+<img src='/HU 04 listar datos jugadores funcionando.png' width='750px'>
+
+
+### Incremento 3 (HU 05)
+
+HU05: Ver un listado con todos los datos de todos los jugadores/equipos ordenado por el campo del jugador/equipo que el usuario desee.
+
+#### Captura de pantalla de TRELLO backlog antes del incremento
+<img src='/HU 05 backlog.png' width='750px'>
+
+#### Captura de pantalla de TRELLO in progress durante el incremento
+<img src='/HU 05 in progress.png' width='750px'>
+
+#### Captura de pantalla de TRELLO done después del incremento
+<img src='/HU 05 done.png' width='750px'>
+
+## Evidencia de que la HU04 funciona correctamente
+
+### Evidencia 1
+En esta imagen se aprecia la evidencia de que la HU funciona correctamente cuando el cliente decide ordenar por el campo nombre, siendo visible tambien en la imagen el desplegablle de opciones que el cliente tiene para elegir por qué campo quiere ordenar a los jugadores
+<img src='/HU 05 Ordenar por el campo que el jugador desee -nombre.png' width='750px'>
+
+### Evidencia 2
+En esta imagen se aprecia la evidencia de que la HU funciona correctamente cuando el cliente decide ordenar por el campo peso
+<img src='/HU 05 Ordenar por el campo que el jugador desee -peso.png' width='750px'>
+
+### Evidencia 3
+En esta imagen se aprecia la evidencia de que la HU funciona correctamente cuando el cliente decide ordenar por el campo fecha
+<img src='/HU 05 Ordenar por el campo que el jugador desee -fecha.png' width='750px'>
+
+
+
 ### Captura de pantalla de mi Home en Fauna
 <img src='/Home-Fauna.png' width='750px'>
 
